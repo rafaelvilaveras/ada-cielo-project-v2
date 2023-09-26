@@ -10,30 +10,60 @@ const data = require('../Desafio_FrontEnd_v2.0.json');
 
 // Define an API endpoint to get all items
 app.get('/api/items', (req, res) => {
-    const page = parseInt(req.query.page) || 1; // Default to page 1 if no 'page' parameter is provided
-    const pageSize = parseInt(req.query.pageSize) || 10; // Default to 10 items per page if no 'pageSize' parameter is provided
-  
-    // Calculate the start and end indices for the current page
-    const startIndex = (page - 1) * pageSize;
-    const endIndex = startIndex + pageSize;
-  
-    // Slice the data array to get the items for the current page
-    const itemsForPage = data.items.slice(startIndex, endIndex);
-  
-    // Create a response object with the current page data
-    const response = {
-      page,
-      pageSize,
-      totalItems: data.items.length,
-      totalPages: Math.ceil(data.items.length / pageSize),
-      items: itemsForPage,
-    };
-  
-    res.json(response);
-  });
-  
+  // Get filter parameters from query
+  const paymentTypeFilter = req.query.paymentType;
+  const cardBrandFilters = req.query.cardBrand; // Accept an array of cardBrands
 
-  // http://localhost:3000/api/items?page=1&pageSize=10
+  // Initialize an array to hold the filtered items
+  let filteredItems = data.items;
+
+  // Apply filters based on query parameters
+  if (paymentTypeFilter) {
+    filteredItems = filteredItems.filter(item => item.paymentType === paymentTypeFilter);
+  }
+
+  if (cardBrandFilters) {
+    // Check if cardBrandFilters is an array or a single value
+    const cardBrands = Array.isArray(cardBrandFilters) ? cardBrandFilters : [cardBrandFilters];
+
+    // Filter items based on the selected cardBrands
+    filteredItems = filteredItems.filter(item => cardBrands.includes(item.cardBrand));
+  }
+
+  // Count the occurrences of each cardBrand in the filtered data
+  const cardBrandCounts = {};
+  filteredItems.forEach(item => {
+    if (cardBrandCounts[item.cardBrand]) {
+      cardBrandCounts[item.cardBrand]++;
+    } else {
+      cardBrandCounts[item.cardBrand] = 1;
+    }
+  });
+
+  // Create a response object with the filtered data and cardBrand counts
+  const response = {
+    totalItems: filteredItems.length,
+    cardBrandCounts,
+    items: filteredItems,
+  };
+
+  // Set the necessary headers in the response
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin (you may want to restrict this in production)
+
+  res.json(response);
+});
+
+
+/* 
+  cardBrand types: http://localhost:3000/api/cardBrands
+
+  cardBrand quant: http://localhost:3000/api/items?cardBrand=Mastercard
+
+  multiple cardBrand quant: http://localhost:3000/api/items?cardBrand[]=Mastercard&cardBrand[]=Visa
+
+
+*/
 
 // Start the server
 app.listen(port, () => {
