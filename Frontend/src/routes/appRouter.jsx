@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AppHub from '../pages/appHub';
+import AppHub from '../pages/appHub/appHub';
 
 const AppRouter = () => {
   return (

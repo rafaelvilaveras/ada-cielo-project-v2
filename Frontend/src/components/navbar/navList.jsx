@@ -6,8 +6,6 @@ const NavList = ({ icon, title, info }) => {
   const [windowStatus, turnWindowStatus] = useState(false);
   const location = useLocation();
 
-  console.log(location.pathname);
-
   return (
     <li
       style={{ gap: '0.5rem' }}
@@ -45,7 +43,7 @@ const NavList = ({ icon, title, info }) => {
                   to={data.route}
                   style={
                     location.pathname === data.route
-                      ? { color: 'var(--light-grey)' }
+                      ? { color: 'white' }
                       : { color: 'black' }
                   }
                   className="link-text"

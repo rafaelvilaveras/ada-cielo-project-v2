@@ -2,15 +2,12 @@ import styled from "styled-components";
 
 export const NavStyles = styled.nav`
 
-.teste {
-    color: red;
-}
 .nav-container {
     width: 100%;
     min-height: 100vh;
     position: relative;
     gap: 0.5rem;
-    background-color: ${(props) => {return props.theme.bgNavBar}};;
+    background-color: ${(props) => {return props.theme.bgNavBar}};
   }
   
   .nav-logo-container {
@@ -44,22 +41,26 @@ export const NavStyles = styled.nav`
   
   .list-items {
     width: 100%;
+    min-height: 5rem;
     align-items: center;
+    justify-content: space-around;
     gap: 0.25rem;
   }
   
   .list-Link {
     width: 100%;
-    height: 1.5rem;
+    height: 2rem;
     font-size: 1.25rem;
     padding: 0.35rem 0;
     justify-content: center;
+    align-items: center;
     position: relative;
   }
   
   .list-active {
     border-radius: 0.3rem;
-    background-color: var(--active-list-bg);
+    background-color: ${(props) => {return props.theme.active}};
+    color: ${(props) => {return props.theme.textButton}};
   }
   
   .link-text {
@@ -98,7 +99,7 @@ export const NavStyles = styled.nav`
     height: 15rem;
     position: absolute;
     bottom: 0rem;
-    background-image: url(/src/img/AppHub/Rectangle\ 28.svg), url(/src/img/AppHub/Rectangle\ 27.svg);
+    background-image: url(/src/assets/navIcons/28.svg), url(/src/assets/navIcons/27.svg);
     background-repeat: no-repeat, no-repeat;
     background-position: bottom;
     background-size: contain, contain;
