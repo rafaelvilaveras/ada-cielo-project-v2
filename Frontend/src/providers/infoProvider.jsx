@@ -11,7 +11,7 @@ const InfoProvider = ({children}) => {
 
     axios.defaults.baseURL = baseURL;
 
-    const [teste, setTeste] = useState(true);
+    const [data, setData] = useState('');
     const [loading, toggleLoad] = useState(false);
 
     async function listCardBrand() {
@@ -21,6 +21,7 @@ const InfoProvider = ({children}) => {
           const response = await axios.get('/items?cardBrand[]=Mastercard&cardBrand[]=Visa', {
           })
           toggleLoad(false);
+          setData(response.data)
           return response.data;
       } catch(error) {
           toggleLoad(false);
@@ -30,7 +31,7 @@ const InfoProvider = ({children}) => {
 
   useEffect(() => {
 
-    listCardBrand();
+    listCardBrand()
 
   },[])
 
@@ -39,7 +40,8 @@ const InfoProvider = ({children}) => {
         value={{
             listCardBrand,
 
-            loading
+            loading,
+            data
         }}
       >
         {children}

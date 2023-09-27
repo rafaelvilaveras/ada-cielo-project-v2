@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const AppHubStyle = styled.main`
+export const AppHubStyle = styled.div`
+
+  height: 100%;
+  z-index: 0;
 
   .ah-container {
     width: 100%;
@@ -10,7 +13,6 @@ export const AppHubStyle = styled.main`
   }
   
   .ah-nav-wrapper {
-    min-width: 14.5rem;
     position: relative;
   }
   
@@ -53,6 +55,8 @@ export const AppHubStyle = styled.main`
       right: -1.55rem;
       background-color: ${(props) => {return props.theme.bgNavBar}};
       cursor: pointer;
+      z-index: 98;
+      box-shadow: 2px 1px 2px -3px black};
     }
   }
 

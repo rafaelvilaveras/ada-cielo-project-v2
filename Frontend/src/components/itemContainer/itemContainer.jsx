@@ -1,13 +1,12 @@
+import { Outlet } from "react-router-dom";
 import ItemContainerStyles from "./style";
 
-const ItemContainer = ({child}) => {
+const ItemContainer = () => {
     return ( 
         <>
           <ItemContainerStyles>
             <div className="container">
-              <div className="wrapper">
-                {child}
-              </div>
+                <Outlet/>
             </div>
           </ItemContainerStyles>
         </>

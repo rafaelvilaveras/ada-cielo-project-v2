@@ -16,30 +16,16 @@ const NavBar = () => {
 
   const sidebarItems = [
     {
-      tittle: 'Relatórios',
+      tittle: 'Gráficos',
       icon: Relatorios,
       info: [
         {
-          name: 'Serviços',
-          route: '/relatorios/servicos',
+          name: 'Barras',
+          route: '/graficos/barras',
         },
         {
-          name: 'Despesas',
-          route: '/relatorios/despesas',
-        },
-      ]
-    },
-    {
-      tittle: 'Calendário',
-      icon: Calendario,
-      info: [
-        {
-          name: 'Serviços',
-          route: '/relatorios/servicos',
-        },
-        {
-          name: 'Despesas',
-          route: '/relatorios/despesas',
+          name: 'Setores',
+          route: '/graficos/setores',
         },
       ]
     },
