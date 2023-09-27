@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
-export const ItemContainerStyles = styled.main`
+const ItemContainerStyles = styled.div `
 
-.nav-container {
-    width: 100%;
-    min-height: 100vh;
+  .container {
+    width: 90%;
+    min-height: 80vh;
+    margin: 0 auto;
     position: relative;
-    gap: 0.5rem;
     background-color: ${(props) => {return props.theme.bgNavBar}};
-  }
-  
-  
+    box-shadow: 0 1px 5px -2px black};
 
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+  }
 
 `;
+
+export default ItemContainerStyles;

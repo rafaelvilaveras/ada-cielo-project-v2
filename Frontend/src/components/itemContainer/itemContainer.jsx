@@ -1,12 +1,15 @@
+import ItemContainerStyles from "./style";
 
 const ItemContainer = ({child}) => {
     return ( 
         <>
-          <div className="container">
-            <div className="wrapper">
-              {child}
+          <ItemContainerStyles>
+            <div className="container">
+              <div className="wrapper">
+                {child}
+              </div>
             </div>
-          </div>
+          </ItemContainerStyles>
         </>
      );
 }
