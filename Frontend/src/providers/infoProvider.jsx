@@ -5,7 +5,11 @@ const InfoContext = React.createContext();
 
 const InfoProvider = ({children}) => {
 
-    axios.defaults.baseURL = 'http://localhost:3000/api';
+
+    // const baseURL = process.env.BASE_URL;
+    const baseURL = 'http://localhost:3000/api';
+
+    axios.defaults.baseURL = baseURL;
 
     const [teste, setTeste] = useState(true);
     const [loading, toggleLoad] = useState(false);
@@ -17,13 +21,11 @@ const InfoProvider = ({children}) => {
           const response = await axios.get('/items?cardBrand[]=Mastercard&cardBrand[]=Visa', {
           })
           toggleLoad(false);
-          console.log(response);
-          return response;
-
+          return response.data;
       } catch(error) {
           toggleLoad(false);
           console.log(error);
-      }
+        }
   }
 
   useEffect(() => {
@@ -35,9 +37,9 @@ const InfoProvider = ({children}) => {
     return(
       <InfoContext.Provider
         value={{
-            setTeste,
+            listCardBrand,
 
-            teste
+            loading
         }}
       >
         {children}
