@@ -9,6 +9,7 @@ const ItemContainerStyles = styled.div `
     position: relative;
     background-color: ${(props) => {return props.theme.bgNavBar}};
     box-shadow: 0 1px 5px -2px black};
+    margin-top: 2rem;
 
   }
 

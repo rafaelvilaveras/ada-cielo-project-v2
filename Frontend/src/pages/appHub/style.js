@@ -28,7 +28,6 @@ export const AppHubStyle = styled.main`
   .ah-content {
     width: 100%;
     min-height: 100vh;
-    justify-content: center;
     position: relative;
   }
 
