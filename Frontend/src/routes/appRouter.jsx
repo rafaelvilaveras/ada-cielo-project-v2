@@ -8,7 +8,7 @@ import { InfoContext } from '../providers/infoProvider';
 const AppRouter = () => {
 
   const infoContext = React.useContext(InfoContext);
-  const { data, loading } = infoContext;
+  const { data } = infoContext;
 
   console.log(data);
 

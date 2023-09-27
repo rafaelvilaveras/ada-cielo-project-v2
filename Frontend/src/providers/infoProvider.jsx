@@ -12,26 +12,27 @@ const InfoProvider = ({children}) => {
     axios.defaults.baseURL = baseURL;
 
     const [data, setData] = useState('');
-    const [loading, toggleLoad] = useState(false);
+    const [loading, turnLoad] = useState(false);
 
-    async function listCardBrand() {
-      toggleLoad(true)
+    function listCardBrand() {
+      turnLoad(true)
 
-      try {
-          const response = await axios.get('/items?cardBrand[]=Mastercard&cardBrand[]=Visa', {
-          })
-          toggleLoad(false);
-          setData(response.data)
-          return response.data;
-      } catch(error) {
-          toggleLoad(false);
-          console.log(error);
-        }
+      axios.get('/items?cardBrand[]=Mastercard&cardBrand[]=Visa', {
+
+      })
+      .catch((error) => {
+        console.log(error)
+        turnLoad(false);
+      })
+      .then((response) => {
+        setData(response.data);
+        turnLoad(false);
+      })
   }
 
   useEffect(() => {
 
-    listCardBrand()
+    listCardBrand();
 
   },[])
 

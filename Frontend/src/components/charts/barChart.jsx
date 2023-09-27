@@ -4,7 +4,9 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 import ChartStyles from "./style";
 
-const BChart = ({data}) => {
+const BChart = () => {
+
+
     return ( 
         <>
           <ChartStyles>
@@ -13,7 +15,7 @@ const BChart = ({data}) => {
                 <BarChart
                 width={500}
                 height={300}
-                data={data}
+                data={''}
                 margin={{
                     top: 5,
                     right: 30,
