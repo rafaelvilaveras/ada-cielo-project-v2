@@ -51,8 +51,6 @@ const BChart = () => {
                     <Legend />
                     {Object.entries(infoData.cardBrandCounts).map((values, index) => {
 
-                        // console.log(values);
-
                         return <Bar key={'Bar' + index} dataKey={values[0]} fill="#8884d8" />
                     })}
                     </BarChart>

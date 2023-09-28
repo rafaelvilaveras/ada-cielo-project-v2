@@ -15,11 +15,11 @@ const ChartStyles = styled.div `
     width: 25%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
     position: absolute;
+    font-size: 1.25rem;
     bottom: 0;
     right: 0;
+    padding: 1rem;
   }
 
 `;

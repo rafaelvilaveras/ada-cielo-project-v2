@@ -14,6 +14,8 @@ const PChart = () => {
     const infoContext = React.useContext(InfoContext);
     const { infoData, loading } = infoContext;
 
+    const chartColor = '#8884d8';
+
     console.log('data', infoData);
 
     const chartData = [
@@ -50,7 +52,7 @@ const PChart = () => {
                         cx="50%"
                         cy="50%"
                         outerRadius={150}
-                        fill="#8884d8"
+                        fill={chartColor}
                         label
                     />
                     <Tooltip />
@@ -58,8 +60,13 @@ const PChart = () => {
                 </ResponsiveContainer>
                 <div className='flex-row chart-items'>
                 {Object.entries(infoData.cardBrandCounts).map((values, index) => {
-
-                    return <h1 key={'h1' + index}>teste</h1>;
+                    console.log(values);
+                    return (
+                      <div style={{ color:chartColor, display:'flex', alignItems:'center', gap:'0.5rem' }} key={'chart-items' + index}>
+                        <div style={{ backgroundColor:chartColor, width: '1rem', height: '1rem' }} className='color-box' />
+                        <span>{values[0]}</span>
+                      </div>
+                    );
                 })}
                 </div>
                 </div>
