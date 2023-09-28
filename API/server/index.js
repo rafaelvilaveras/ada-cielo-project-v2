@@ -49,19 +49,16 @@ app.get('/api/items', (req, res) => {
 
   // Set the necessary headers in the response
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin (you may want to restrict this in production)
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
 
   res.json(response);
 });
 
 
 /* 
-  cardBrand types: http://localhost:3000/api/cardBrands
-
   cardBrand quant: http://localhost:3000/api/items?cardBrand=Mastercard
 
   multiple cardBrand quant: http://localhost:3000/api/items?cardBrand[]=Mastercard&cardBrand[]=Visa
-
 
 */
 

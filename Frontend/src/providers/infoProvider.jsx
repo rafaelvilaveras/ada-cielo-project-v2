@@ -11,38 +11,46 @@ const InfoProvider = ({children}) => {
 
     axios.defaults.baseURL = baseURL;
 
-    const [data, setData] = useState('');
-    const [loading, turnLoad] = useState(false);
+    const [infoData, setInfoData] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [cardSelector, setCardSelector] = useState({
+      Elo: false,
+      Hipercard: false,
+      Mastercard: false,
+      Visa: false,
+    });
 
-    function listCardBrand() {
-      turnLoad(true)
 
-      axios.get('/items?cardBrand[]=Mastercard&cardBrand[]=Visa', {
+    function handleInfo() {
+      setLoading(true);
 
+      const url = 'http://localhost:3000/api/items';
+
+      axios.get(url)
+      .then( response => {
+          setInfoData(response.data);
+          setLoading(false);
       })
-      .catch((error) => {
-        console.log(error)
-        turnLoad(false);
+      .catch( error => {
+          console.log(error);
+          setLoading(false);
       })
-      .then((response) => {
-        setData(response.data);
-        turnLoad(false);
-      })
-  }
+    }
 
   useEffect(() => {
 
-    listCardBrand();
+    handleInfo();
 
   },[])
 
     return(
       <InfoContext.Provider
         value={{
-            listCardBrand,
+            setCardSelector,
 
             loading,
-            data
+            infoData,
+            cardSelector
         }}
       >
         {children}
