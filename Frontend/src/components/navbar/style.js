@@ -17,6 +17,8 @@ export const NavStyles = styled.nav`
     gap: 1rem;
     padding: 1rem;
     box-sizing: border-box;
+    text-decoration: none;
+    color: ${(props) => {return props.theme.textDefault}}
   }
   
   .nav-options {

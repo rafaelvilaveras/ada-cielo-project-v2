@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import NavBar from "../../components/navbar/navbar";
 import { AppHubStyle } from "./style";
+import ItemContainer from "../../components/itemContainer/itemContainer";
 
 const AppHub = () => {
     const [displayNav, turnDisplayNav] = useState(false);
+    const location = useLocation();
   
     return (
       <AppHubStyle>
@@ -24,7 +26,15 @@ const AppHub = () => {
             </div>
           </div>
           <div className="flex-column ah-content">
-            <Outlet />
+            { location.pathname === '/' && 
+              <div>
+                <h1>teste</h1>
+              </div>
+            }
+
+            { location.pathname !== '/' && 
+              <Outlet />
+            }
           </div>
         </div>
       </AppHubStyle>
