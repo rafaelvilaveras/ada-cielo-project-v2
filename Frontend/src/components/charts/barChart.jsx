@@ -1,5 +1,5 @@
-import React, { PureComponent, useEffect, useState } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React, { useState } from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 import ChartStyles from "./style";
@@ -7,9 +7,6 @@ import axios from 'axios';
 import { InfoContext } from '../../providers/infoProvider';
 
 const BChart = () => {
-
-    const [data, setData] = useState('');
-    // const [loading, setLoading] = useState(false);
 
     const infoContext = React.useContext(InfoContext);
     const { infoData, loading } = infoContext;

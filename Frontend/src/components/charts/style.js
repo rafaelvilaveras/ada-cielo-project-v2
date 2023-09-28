@@ -11,17 +11,6 @@ const ChartStyles = styled.div `
     height: 100%;
   }
 
-  .chart-items {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    font-size: 1.25rem;
-    bottom: 0;
-    right: 0;
-    padding: 1rem;
-  }
-
 `;
 
 export default ChartStyles;

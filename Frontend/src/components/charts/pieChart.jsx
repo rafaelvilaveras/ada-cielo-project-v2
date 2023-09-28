@@ -1,4 +1,4 @@
-import React, { PureComponent, useEffect, useState } from 'react';
+import React from 'react';
 import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 
 
@@ -8,15 +8,10 @@ import { InfoContext } from '../../providers/infoProvider';
 
 const PChart = () => {
 
-    const [data, setData] = useState('');
-    // const [loading, setLoading] = useState(false);
-
     const infoContext = React.useContext(InfoContext);
     const { infoData, loading } = infoContext;
 
     const chartColor = '#8884d8';
-
-    console.log('data', infoData);
 
     const chartData = [
         {
@@ -37,6 +32,21 @@ const PChart = () => {
         },
     ];
 
+    function getRandomColorBetweenRedAndBlue() {
+      const minRed = 0;   // Minimum red component
+      const maxRed = 255; // Maximum red component
+      const minBlue = 0;  // Minimum blue component
+      const maxBlue = 255;// Maximum blue component
+    
+      const randomRed = Math.floor(Math.random() * (maxRed - minRed + 1)) + minRed;
+      const randomBlue = Math.floor(Math.random() * (maxBlue - minBlue + 1)) + minBlue;
+    
+      // Convert the RGB components to a hex color string
+      const hexColor = `#${randomRed.toString(16)}00${randomBlue.toString(16)}`;
+    
+      return hexColor;
+    }
+
     return ( 
         <>
           {loading && <h1>Carregando...</h1>}
@@ -51,24 +61,13 @@ const PChart = () => {
                         data={chartData}
                         cx="50%"
                         cy="50%"
-                        outerRadius={150}
                         fill={chartColor}
                         label
                     />
                     <Tooltip />
+                    <Legend verticalAlign="bottom" height={24}/>
                     </PieChart>
                 </ResponsiveContainer>
-                <div className='flex-row chart-items'>
-                {Object.entries(infoData.cardBrandCounts).map((values, index) => {
-                    console.log(values);
-                    return (
-                      <div style={{ color:chartColor, display:'flex', alignItems:'center', gap:'0.5rem' }} key={'chart-items' + index}>
-                        <div style={{ backgroundColor:chartColor, width: '1rem', height: '1rem' }} className='color-box' />
-                        <span>{values[0]}</span>
-                      </div>
-                    );
-                })}
-                </div>
                 </div>
             </ChartStyles>
           }
