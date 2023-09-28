@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { InfoContext } from '../../providers/infoProvider';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 import ChartStyles from "./style";
-import axios from 'axios';
-import { InfoContext } from '../../providers/infoProvider';
 
 const BChart = () => {
 

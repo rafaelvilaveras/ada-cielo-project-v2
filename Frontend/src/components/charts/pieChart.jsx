@@ -1,10 +1,9 @@
 import React from 'react';
+import { InfoContext } from '../../providers/infoProvider';
 import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 
 
 import ChartStyles from "./style";
-import axios from 'axios';
-import { InfoContext } from '../../providers/infoProvider';
 
 const PChart = () => {
 
