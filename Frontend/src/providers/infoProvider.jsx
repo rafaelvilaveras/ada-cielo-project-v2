@@ -4,7 +4,21 @@ import axios from 'axios';
 const InfoContext = React.createContext();
 
 const InfoProvider = ({children}) => {
-
+  
+  const colors = [
+    '#0074D9', // Blue
+    '#FF4136', // Red
+    '#2ECC40', // Green
+    '#FF851B', // Orange
+    '#B10DC9', // Purple
+    '#FFDC00', // Yellow
+    '#001F3F', // Navy
+    '#39CCCC', // Teal
+    '#F012BE', // Fuchsia
+    '#85144b', // Maroon
+    '#3D9970', // Olive
+    '#AAAAAA', // Gray
+  ];
 
     // const baseURL = process.env.BASE_URL;
     const baseURL = 'http://localhost:3000/api';
@@ -36,7 +50,7 @@ const InfoProvider = ({children}) => {
           setLoading(false);
       })
     }
-
+    
   useEffect(() => {
 
     handleInfo();
@@ -48,9 +62,10 @@ const InfoProvider = ({children}) => {
         value={{
             setCardSelector,
 
-            loading,
+            cardSelector,
+            colors,
             infoData,
-            cardSelector
+            loading,
         }}
       >
         {children}

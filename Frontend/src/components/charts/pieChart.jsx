@@ -1,6 +1,6 @@
 import React from 'react';
 import { InfoContext } from '../../providers/infoProvider';
-import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 
 import ChartStyles from "./style";
@@ -8,7 +8,7 @@ import ChartStyles from "./style";
 const PChart = () => {
 
     const infoContext = React.useContext(InfoContext);
-    const { infoData, loading } = infoContext;
+    const { infoData, loading, getRandomChartColor } = infoContext;
 
     const chartColor = '#8884d8';
 
@@ -31,21 +31,6 @@ const PChart = () => {
         },
     ];
 
-    function getRandomColorBetweenRedAndBlue() {
-      const minRed = 0;   // Minimum red component
-      const maxRed = 255; // Maximum red component
-      const minBlue = 0;  // Minimum blue component
-      const maxBlue = 255;// Maximum blue component
-    
-      const randomRed = Math.floor(Math.random() * (maxRed - minRed + 1)) + minRed;
-      const randomBlue = Math.floor(Math.random() * (maxBlue - minBlue + 1)) + minBlue;
-    
-      // Convert the RGB components to a hex color string
-      const hexColor = `#${randomRed.toString(16)}00${randomBlue.toString(16)}`;
-    
-      return hexColor;
-    }
-
     return ( 
         <>
           {loading && <h1>Carregando...</h1>}
@@ -65,6 +50,9 @@ const PChart = () => {
                     />
                     <Tooltip />
                     <Legend verticalAlign="bottom" height={24}/>
+                    {chartData.map(( values, index ) => {
+                      return <Cell key={'Cell' + index} fill={'#f4f4f4'} />
+                    })}
                     </PieChart>
                 </ResponsiveContainer>
                 </div>

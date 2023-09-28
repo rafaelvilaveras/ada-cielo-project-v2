@@ -8,9 +8,22 @@ import ChartStyles from "./style";
 const BChart = () => {
 
     const infoContext = React.useContext(InfoContext);
-    const { infoData, loading } = infoContext;
+    const { infoData, loading, colors } = infoContext;
 
-    console.log('data', infoData);
+    var usedColors = [];
+
+    function getRandomChartColor(usedColors) {
+      
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        const aux = randomIndex;
+  
+        var returnSwitch = usedColors.some((color) => { return color === colors[aux]});
+
+        usedColors.length >= 4 ? usedColors = [] : usedColors.push(colors[aux]);
+          
+        return !returnSwitch ? colors[aux] : getRandomChartColor(usedColors);
+  
+      }
 
     const chartData = [
         {
@@ -47,7 +60,7 @@ const BChart = () => {
                     <Legend />
                     {Object.entries(infoData.cardBrandCounts).map((values, index) => {
 
-                        return <Bar key={'Bar' + index} dataKey={values[0]} fill="#8884d8" />
+                        return <Bar key={'Bar' + index} dataKey={values[0]} fill={getRandomChartColor(usedColors)} />
                     })}
                     </BarChart>
                 </ResponsiveContainer>
