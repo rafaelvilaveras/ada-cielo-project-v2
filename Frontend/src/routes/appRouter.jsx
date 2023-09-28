@@ -17,7 +17,6 @@ const AppRouter = () => {
         <Route exact path="/graficos" element={<ItemContainer/>} >
           <Route exact path="/graficos/barras" element={<BChart/>} />
           <Route exact path="/graficos/setores" element={<PChart/>} />
-
         </Route>
       </Route>
     </Routes>

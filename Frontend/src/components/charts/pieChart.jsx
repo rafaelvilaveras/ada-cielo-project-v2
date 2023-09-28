@@ -31,6 +31,8 @@ const PChart = () => {
         },
     ];
 
+    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
     return ( 
         <>
           {loading && <h1>Carregando...</h1>}
@@ -50,9 +52,6 @@ const PChart = () => {
                     />
                     <Tooltip />
                     <Legend verticalAlign="bottom" height={24}/>
-                    {chartData.map(( values, index ) => {
-                      return <Cell key={'Cell' + index} fill={'#f4f4f4'} />
-                    })}
                     </PieChart>
                 </ResponsiveContainer>
                 </div>
