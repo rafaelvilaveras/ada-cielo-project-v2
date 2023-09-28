@@ -3,6 +3,7 @@ import React from 'react';
 import { NavStyles } from './style';
 
 import logo from '../../assets/navIcons/Logo.svg';
+import tech from '../../assets/tech.png';
 import Relatorios from '../../assets/navIcons/relatorios.svg';
 import Calendario from '../../assets/navIcons/calendario.svg';
 import Servicos from '../../assets/navIcons/servicos.svg';
@@ -36,8 +37,8 @@ const NavBar = () => {
     <NavStyles>
         <div className="flex-column nav-container">
         <div className="flex-column nav-logo-container">
-            <img style={{ width: '8rem' }} src={logo} loading="lazy" alt="Desinfec" />
-            <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>Desinfec</span>
+            <img style={{ width: '8rem' }} className='logo' src={tech} loading="lazy" alt="Desinfec" />
+            <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>TechTests</span>
         </div>
         <hr style={{ width: '100%', height: '4px', backgroundColor: 'var(--hr-color)' }} />
         <ul style={{ gap: '1.5rem' }} className="flex-column nav-options">

@@ -107,6 +107,11 @@ export const NavStyles = styled.nav`
     background-size: contain, contain;
     z-index: 999;
   }
+
+  .logo {
+    border-radius: 10rem;
+    border: 2px solid black;
+  }
   
   @media (max-width: 750px) {
 
