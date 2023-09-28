@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const NavStyles = styled.nav`
 
-.nav-container {
+
+  .nav-container {
     width: 100%;
     min-height: 100vh;
     position: relative;
     gap: 0.5rem;
     background-color: ${(props) => {return props.theme.bgNavBar}};
+    z-index: 98;
   }
   
   .nav-logo-container {
@@ -106,6 +108,13 @@ export const NavStyles = styled.nav`
     z-index: 999;
   }
   
+  @media (max-width: 750px) {
+
+    .nav-container {
+      box-shadow: 0 1px 5px -2px black};
+    }
+    
+  }
 
 
 `;
