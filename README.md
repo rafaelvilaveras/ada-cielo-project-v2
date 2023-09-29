@@ -21,8 +21,14 @@ Por fim, inicie o servidor da API:
 cd server
 node index.js
 
-FRONTEND
-Executando o Aplicativo Frontend
+```
+
+## FRONTEND
+
+## Executando o Aplicativo Frontend
+
+```bash
+
 Para iniciar o aplicativo frontend, navegue até o diretório ada-cielo-project-v2 e siga estas etapas no seu prompt de comando:
 
 cd Frontend
