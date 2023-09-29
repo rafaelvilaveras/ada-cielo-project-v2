@@ -7,7 +7,7 @@ export const AppHubStyle = styled.div`
 
   .ah-container {
     width: 100%;
-    height: fit-content;
+    height: 100%;
     align-self: center;
     justify-self: center;
   }
@@ -31,6 +31,41 @@ export const AppHubStyle = styled.div`
     width: 100%;
     min-height: 100vh;
     position: relative;
+  }
+
+  
+  .home-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    align-self: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .home-container h1 {
+    align-self: center;
+  }
+
+  .home-container p {
+    text-indent: 1rem;
+    font-weight: 500;
+  }
+
+  .home-container div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .home-footer {
+    width: 100%;
+    min-height: 8.3rem;
+    background-color: #7DBFEB;
+    color: white;
+    padding: 1rem;
   }
 
   @media (max-width: 750px) {
@@ -58,7 +93,11 @@ export const AppHubStyle = styled.div`
       z-index: 98;
       box-shadow: 2px 1px 2px -3px black};
     }
+
+
   }
+
+
 
 
 `;
