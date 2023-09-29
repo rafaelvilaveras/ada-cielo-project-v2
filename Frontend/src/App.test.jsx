@@ -25,7 +25,7 @@ describe('jest', () => {
     it('renders correctly', () => {
         render(
             <BrowserRouter>
-              <InfoProvider>
+            <InfoProvider>
                 <Typography/>
                 <NavBar />
               </InfoProvider>
@@ -35,7 +35,7 @@ describe('jest', () => {
     })
 
     it('renders correctly', () => {
-        render(
+          render(
             <BrowserRouter>
               <InfoProvider>
                 <Typography/>
@@ -43,6 +43,7 @@ describe('jest', () => {
               </InfoProvider>
             </BrowserRouter>  
         )
+
 
     })
 
