@@ -53,7 +53,7 @@ export const AppHubStyle = styled.div`
     font-weight: 500;
   }
 
-  .home-container div {
+  .text-wrapper {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -65,7 +65,6 @@ export const AppHubStyle = styled.div`
     min-height: 8.3rem;
     background-color: #7DBFEB;
     color: white;
-    padding: 1rem;
   }
 
   @media (max-width: 750px) {
