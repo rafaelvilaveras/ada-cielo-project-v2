@@ -21,6 +21,7 @@ export default createGlobalStyle`
 
   .app-container {
       width: 100%;
+      max-width: 1560px;
       min-height: 100vh;
       margin: auto;
       display: flex;
@@ -50,6 +51,14 @@ export default createGlobalStyle`
       -webkit-user-select: none; /* Safari */
       -ms-user-select: none; /* IE 10 and IE 11 */
       user-select: none; /* Standard syntax */
+    }
+
+    @media ( min-width: 1561px) {
+      .app-container {
+        box-shadow: 0 5px 5px -1px black};
+      }
+  
+  
     }
 
 

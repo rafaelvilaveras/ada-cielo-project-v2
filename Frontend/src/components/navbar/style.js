@@ -5,6 +5,7 @@ export const NavStyles = styled.nav`
 
   .nav-container {
     width: 100%;
+    height: 100%;
     min-height: 100vh;
     position: relative;
     gap: 0.5rem;
@@ -17,6 +18,8 @@ export const NavStyles = styled.nav`
     gap: 1rem;
     padding: 1rem;
     box-sizing: border-box;
+    text-decoration: none;
+    color: ${(props) => {return props.theme.textDefault}}
   }
   
   .nav-options {
@@ -106,6 +109,11 @@ export const NavStyles = styled.nav`
     background-position: bottom;
     background-size: contain, contain;
     z-index: 999;
+  }
+
+  .logo {
+    border-radius: 10rem;
+    border: 2px solid black;
   }
   
   @media (max-width: 750px) {
