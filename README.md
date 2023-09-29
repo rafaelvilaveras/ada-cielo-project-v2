@@ -1,40 +1,46 @@
-# ada-cielo-project-v2
-ADA / Cielo bootcamp challenge!
+# Projeto ADA / Cielo (Versão 2)
 
-# API
+Bem-vindo ao projeto desafio do Bootcamp ADA / Cielo!
 
-# Para iniciar a API você deve, da pasta ada-cielo-project-v2, executar os seguintes comandos no prompt:
+( Necessário node 16 ou superior para executar os comandos. )
 
+## API
+
+### Executando a API
+
+Para iniciar a API, navegue até o diretório `ada-cielo-project-v2` e siga estas etapas no seu prompt de comando:
+
+```bash
 cd API
 
-# Em seguida fazer conforme os passos adiante:
-
-# Comandos de instalação:
+Em seguida, execute os seguintes comandos:
 
 npm init -y
+npm install
 
-npm install ou npm i (Como preferir)
-
-# Comandos de inicialização:
+Por fim, inicie o servidor da API:
 
 cd server
-
 node index.js
 
-# FRONTEND
+```
 
-# Para iniciar o aplicativo você deve, da pasta ada-cielo-project-v2, executar os seguintes comandos no prompt:
+## FRONTEND
+
+### Executando o Aplicativo Frontend
+
+```bash
+
+Para iniciar o aplicativo frontend, navegue até o diretório ada-cielo-project-v2 e siga estas etapas no seu prompt de comando:
 
 cd Frontend
 
-# Em seguida fazer conforme os passos adiante:
+Em seguida, execute o seguinte comando:
 
-# Comandos de instalação:
+npm install
 
-npm i ou npm install
-
-# Comandos de inicialização:
+Por fim, execute o servidor de desenvolvimento:
 
 npm run dev
 
-(no prompt irá aparecer um link que levará a aplicação)
+Você verá um link no prompt de comando que o levará ao aplicativo. ( http://127.0.0.1:5173/ )
