@@ -12,13 +12,20 @@ Para iniciar a API, navegue até o diretório `ada-cielo-project-v2` e siga esta
 
 ```bash
 cd API
+```
 
 Em seguida, execute os seguintes comandos:
+
+```bash
 
 npm init -y
 npm install
 
+```
+
 Por fim, inicie o servidor da API:
+
+```bash
 
 cd server
 node index.js
@@ -33,16 +40,24 @@ Para iniciar o aplicativo frontend, navegue até o diretório `ada-cielo-project
 
 ```bash
 
-
 cd Frontend
+
+```
 
 Em seguida, execute o seguinte comando:
 
+```bash
+
 npm install
+
+```
 
 Por fim, execute o servidor de desenvolvimento:
 
+```bash
+
 npm run dev
 
+```
 
 Você verá um link no prompt de comando que o levará ao aplicativo. ( Provavelmente este -> http://127.0.0.1:5173/ )
