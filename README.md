@@ -2,7 +2,7 @@
 
 Bem-vindo ao projeto desafio do Bootcamp ADA / Cielo!
 
-( Necessário node 16 ou superior para executar os comandos. )
+( Necessário node 16.18.0 ou superior para executar os comandos. )
 
 ## API
 
