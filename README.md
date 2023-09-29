@@ -29,7 +29,7 @@ node index.js
 
 ### Executando o Aplicativo Frontend
 
-Para iniciar o aplicativo frontend, navegue até o diretório ada-cielo-project-v2 e siga estas etapas no seu prompt de comando:
+Para iniciar o aplicativo frontend, navegue até o diretório `ada-cielo-project-v2` e siga estas etapas no seu prompt de comando:
 
 ```bash
 
