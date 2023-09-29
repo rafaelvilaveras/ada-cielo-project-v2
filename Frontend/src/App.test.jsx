@@ -10,7 +10,7 @@ import AppHub from './pages/appHub/appHub';
 
 describe('jest', () => {
 
-    it('renders correctly', () => {
+    it('App renders correctly', () => {
         render(
             <BrowserRouter>
               <InfoProvider>
@@ -22,7 +22,7 @@ describe('jest', () => {
 
     })
 
-    it('renders correctly', () => {
+    it('NavBar renders correctly', () => {
         render(
             <BrowserRouter>
             <InfoProvider>
@@ -34,7 +34,7 @@ describe('jest', () => {
 
     })
 
-    it('renders correctly', () => {
+    it('AppHub renders correctly', () => {
           render(
             <BrowserRouter>
               <InfoProvider>
