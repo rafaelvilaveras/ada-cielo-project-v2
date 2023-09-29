@@ -43,4 +43,5 @@ Por fim, execute o servidor de desenvolvimento:
 
 npm run dev
 
-Você verá um link no prompt de comando que o levará ao aplicativo. ( http://127.0.0.1:5173/ )
+
+Você verá um link no prompt de comando que o levará ao aplicativo. ( Provavelmente este -> http://127.0.0.1:5173/ )
