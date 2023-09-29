@@ -20,8 +20,7 @@ const InfoProvider = ({children}) => {
     '#AAAAAA', // Gray
   ];
 
-    // const baseURL = process.env.BASE_URL;
-    const baseURL = 'http://localhost:3000/api';
+    const baseURL = import.meta.env.VITE_APP_BASE_URL;
 
     axios.defaults.baseURL = baseURL;
 

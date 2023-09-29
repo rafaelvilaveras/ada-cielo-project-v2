@@ -4,6 +4,8 @@ Bem-vindo ao projeto desafio do Bootcamp ADA / Cielo!
 
 ( Necessário node 16.18.0 ou superior para executar os comandos. )
 
+### SE MUDAR A PORTA DA API, TROQUE O VALOR NO .ENV!!!
+
 ## API
 
 ### Executando a API
