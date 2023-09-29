@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
-export const AppHubStyle = styled.main`
+export const AppHubStyle = styled.div`
+
+  height: 100%;
+  z-index: 0;
 
   .ah-container {
     width: 100%;
-    height: fit-content;
+    height: 100%;
     align-self: center;
     justify-self: center;
   }
   
   .ah-nav-wrapper {
-    min-width: 14.5rem;
     position: relative;
   }
   
@@ -27,7 +29,53 @@ export const AppHubStyle = styled.main`
   
   .ah-content {
     width: 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  
+  .home-container {
+    width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction:column;
+    align-self: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .home-container h1 {
+    align-self: center;
+  }
+
+  .home-container p {
+    text-indent: 1rem;
+    font-weight: 500;
+  }
+
+  .text-wrapper {
+    width: 85%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .home-footer {
+    width: 100%;
+    display: flex;
+    min-height: 8.3rem;
+    background-color: #7DBFEB;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .home-footer a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: ${(props) => {return props.theme.textDefault}};
   }
 
   @media (max-width: 750px) {
@@ -52,8 +100,14 @@ export const AppHubStyle = styled.main`
       right: -1.55rem;
       background-color: ${(props) => {return props.theme.bgNavBar}};
       cursor: pointer;
+      z-index: 98;
+      box-shadow: 2px 1px 2px -3px black};
     }
+
+
   }
+
+
 
 
 `;
