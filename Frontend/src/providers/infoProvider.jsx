@@ -42,12 +42,12 @@ const InfoProvider = ({children}) => {
 
       axios.get(url)
       .then( response => {
-          setInfoData(response.data);
-          setLoading(false);
+        setInfoData(response.data);
+        setLoading(false);
       })
       .catch( error => {
-          console.log(error);
-          setLoading(false);
+        setLoading(false);
+        throw(error);
       })
     }
     
