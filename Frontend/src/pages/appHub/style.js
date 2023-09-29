@@ -54,6 +54,8 @@ export const AppHubStyle = styled.div`
   }
 
   .text-wrapper {
+    width: 85%;
+    align-self: center;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -62,9 +64,18 @@ export const AppHubStyle = styled.div`
 
   .home-footer {
     width: 100%;
+    display: flex;
     min-height: 8.3rem;
     background-color: #7DBFEB;
     color: white;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .home-footer a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: ${(props) => {return props.theme.textDefault}};
   }
 
   @media (max-width: 750px) {

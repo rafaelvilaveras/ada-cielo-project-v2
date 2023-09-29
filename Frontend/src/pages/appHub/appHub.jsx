@@ -34,7 +34,8 @@ const AppHub = () => {
                   <p>Existem 2 (dois) exemplos de gráficos nessa página, um de barras e outro de setores, ambos usam apenas um tipo de informação, apenas para exemplificar que a API está funcional.</p>
                 </div>
                 <footer className="home-footer">
-                  <h1>teste</h1>
+                  <a target='_blank' rel='noreferrer'  href="https://github.com/rafaelvilaveras">GitHub: /rafaelvilaveras</a>
+                  <a target='_blank' rel='noreferrer'  href="https://www.linkedin.com/in/rafaelvilaveras/">LinkedIn: Rafael Pereira Magalhães</a>
                 </footer>
               </div>
             }
